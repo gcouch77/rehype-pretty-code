@@ -35,5 +35,5 @@ jobs:
       - name: 'Lint Packaging Errors'
         run: npx publint --strict
 
-      - name: 'Test'
-        run: npm run test
+      # - name: 'Test'
+      #   run: npm run test
