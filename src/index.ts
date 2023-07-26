@@ -88,11 +88,26 @@ function toFragment(
           type: 'element',
           tagName: 'div',
           properties: {
-            'data-rehype-pretty-code-title': '',
+            'data-rehype-pretty-code-header': '',
             'data-language': lang,
             'data-theme': mode,
           },
-          children: [{ type: 'text', value: title }],
+          children: [{ 
+            type: 'element',
+            tagName: 'span',
+            properties: {
+              'data-rehype-pretty-code-language': '',
+            },
+            children: [{type: 'text', value: lang}],  
+          },
+          {
+            type: 'element',
+            tagName: 'span',
+            properties: {
+              'data-rehype-pretty-code-title': '',
+            },
+            children: [{type: 'text', value: title}], 
+          }],
         };
         onVisitTitle?.(elementContent);
         fragments.push(elementContent);
